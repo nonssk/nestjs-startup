@@ -39,7 +39,7 @@ pipeline {
                     sh "docker login -u nonssk403 -p dckr_pat_kNNn2pcFGwxRcjB-2mYDili0I8s"
                     sh "docker tag ${env.NAME} nonssk403/${env.NAME}:${env.VERSION}"
                     sh "docker push nonssk403/${env.NAME}:${env.VERSION}"
-                    sh "docker rmi ${PROJECT_NAME}"
+                    sh "docker rmi ${env.NAME}"
                     sh "docker rmi nonssk403/${env.NAME}:${env.VERSION}"
                 }
             }
